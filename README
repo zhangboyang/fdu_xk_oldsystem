@@ -1,0 +1,23 @@
+复旦旧版选课系统刷课机
+
+p.s. 刷课机写得太丑陋以至于我自己都看不下去了
+
+依赖库: libjpeg8
+  p.s. 在 ubuntu 下安装 libjpeg-turbo8-dev 或 libjpeg8-dev 包即可
+
+功能：仅支持在二、三阶段抢课，另外只支持抢一门课
+
+使用方法：修改 main.c 标注有 USER INFORMATION 的地方，编译运行即可
+
+编译运行方法：运行命令 make clean && make && ./xk
+  p.s. 由于 Makefile 写的不够好，每次都要 make clean
+
+参数说明：
+  MAXCONN 链接池连接数
+  REFRESHER_SOLT_USE 刷课连接数
+  XKSRV_ADDR1 选课地址1
+  XKSRV_ADDR2 选课地址2
+  XK_FDUXK_USERNAME 学号
+  XK_FDUXK_PASSWORD 密码
+  ccode 选课号
+  my_judge1 用于判定余量放出的函数，修改为 return x >= 0; 可以强制立即选课
